@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEVAKORN | Creative Technologist 2026</title>
-    <meta name="description"
-        content="Premium Portfolio of Devakorn - Senior UI/UX Architect & Front-end Engineer. specializing in futuristic interfaces.">
+    <meta name="description" content="Premium Portfolio of Devakorn - Senior UI/UX Architect & Front-end Engineer. specializing in futuristic interfaces.">
+    
+    <!-- Tab Icon (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
     <!-- Open Graph / SEO -->
     <meta property="og:title" content="DEVAKORN Portfolio">
@@ -17,16 +18,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    
     <!-- Icons (Lucide via CDN for lightweight vectors) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="/css/style.css">
-
 </head>
-
 <body>
 
     <!-- Preloader -->
@@ -46,13 +43,20 @@
     <nav id="navbar">
         <div class="container nav-inner">
             <a href="#" class="logo">DEVA<span>KORN</span></a>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn hover-trigger" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link hover-trigger">About</a></li>
+                <li><a href="#projects" class="nav-link hover-trigger">Projects</a></li>
+                <li><a href="#services" class="nav-link hover-trigger">Services</a></li>
+                <li><a href="#contact" class="nav-link hover-trigger">Contact</a></li>
             </ul>
-            <button class="theme-toggle" id="theme-btn"><i data-lucide="sun"></i></button>
+            
+            <button class="theme-toggle hover-trigger" id="theme-btn"><i data-lucide="sun"></i></button>
         </div>
     </nav>
 
@@ -64,8 +68,7 @@
                 <h1 class="text-gradient">DEVAKORN</h1>
                 <p>I am a <span class="typing-text"></span></p>
                 <div style="margin-top: 40px;">
-                    <a href="#projects" class="btn btn-solid hover-trigger">View Work <i
-                            data-lucide="arrow-right"></i></a>
+                    <a href="#projects" class="btn btn-solid hover-trigger">View Work <i data-lucide="arrow-right"></i></a>
                     <a href="#contact" class="btn hover-trigger">Contact Me</a>
                 </div>
             </div>
@@ -79,36 +82,26 @@
             <div class="grid about-grid reveal">
                 <div class="about-img hover-trigger">
                     <!-- Placeholder for profile -->
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Devakorn Profile">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Devakorn Profile">
                 </div>
                 <div>
-                    <h3 style="font-size: 2rem; margin-bottom: 20px;">Building the <span class="text-gradient">Digital
-                            Future</span></h3>
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">Building the <span class="text-gradient">Digital Future</span></h3>
                     <p class="text-muted" style="margin-bottom: 20px;">
-                        With over 8 years of experience in front-end architecture, I specialize in building
-                        high-performance, accessible, and immersive web experiences. I bridge the gap between creative
-                        design and technical engineering.
+                        With over 8 years of experience in front-end architecture, I specialize in building high-performance, accessible, and immersive web experiences. I bridge the gap between creative design and technical engineering.
                     </p>
-
+                    
                     <div class="skills-grid">
                         <div class="skill-item">
                             <div class="skill-info"><span>Frontend Architecture</span><span>95%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="95%"></div>
-                            </div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info"><span>UI/UX Design</span><span>90%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="90%"></div>
-                            </div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info"><span>WebGL / Three.js</span><span>85%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="85%"></div>
-                            </div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
                         </div>
                     </div>
 
@@ -134,16 +127,14 @@
                     <div class="timeline-date">2024 - Present</div>
                     <h3>Senior Frontend Engineer</h3>
                     <p class="text-muted">TechNova Solutions</p>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">Leading the design system migration and architecting
-                        the new micro-frontend dashboard.</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Leading the design system migration and architecting the new micro-frontend dashboard.</p>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2021 - 2024</div>
                     <h3>UI/UX Developer</h3>
                     <p class="text-muted">Creative Pulse Agency</p>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">Award-winning sites for automotive and fashion
-                        clients using WebGL.</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Award-winning sites for automotive and fashion clients using WebGL.</p>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
@@ -159,7 +150,7 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title reveal">Selected Work</h2>
-
+            
             <div class="filters reveal">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web App</button>
@@ -205,15 +196,13 @@
                 <div class="testimonial-slider" id="slider">
                     <div class="testimonial-card hover-trigger">
                         <i data-lucide="quote" class="quote-icon"></i>
-                        <p style="font-size: 1.2rem; margin-bottom: 20px;">"Devakorn transformed our digital presence.
-                            The attention to detail and animations are world-class."</p>
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">"Devakorn transformed our digital presence. The attention to detail and animations are world-class."</p>
                         <h4>Sarah Jenkins</h4>
                         <p class="text-muted">CEO, FinTech Global</p>
                     </div>
                     <div class="testimonial-card hover-trigger">
                         <i data-lucide="quote" class="quote-icon"></i>
-                        <p style="font-size: 1.2rem; margin-bottom: 20px;">"Clean code, futuristic design, and delivered
-                            ahead of schedule. Highly recommended."</p>
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">"Clean code, futuristic design, and delivered ahead of schedule. Highly recommended."</p>
                         <h4>Marc Alistair</h4>
                         <p class="text-muted">Director, RedStream</p>
                     </div>
@@ -227,17 +216,13 @@
         <div class="container">
             <h2 class="section-title reveal">FAQ</h2>
             <div class="faq-container" style="max-width: 800px;">
-                <details class="reveal"
-                    style="background: var(--surface); margin-bottom: 10px; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                <details class="reveal" style="background: var(--surface); margin-bottom: 10px; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
                     <summary style="font-weight: 600; list-style: none;">Are you available for freelance?</summary>
-                    <p class="text-muted" style="margin-top: 10px;">Yes, currently accepting new projects for Q3 2026.
-                        Please contact me for availability.</p>
+                    <p class="text-muted" style="margin-top: 10px;">Yes, currently accepting new projects for Q3 2026. Please contact me for availability.</p>
                 </details>
-                <details class="reveal"
-                    style="background: var(--surface); margin-bottom: 10px; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                <details class="reveal" style="background: var(--surface); margin-bottom: 10px; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
                     <summary style="font-weight: 600; list-style: none;">What is your tech stack?</summary>
-                    <p class="text-muted" style="margin-top: 10px;">I primarily work with React/Next.js, Vue, WebGL, and
-                        Tailwind, but I adapt to project needs.</p>
+                    <p class="text-muted" style="margin-top: 10px;">I primarily work with React/Next.js, Vue, WebGL, and Tailwind, but I adapt to project needs.</p>
                 </details>
             </div>
         </div>
@@ -250,9 +235,8 @@
             <div class="contact-wrapper reveal">
                 <div>
                     <h3 style="font-size: 2rem; margin-bottom: 20px;">Have a project in mind?</h3>
-                    <p class="text-muted" style="margin-bottom: 40px;">I'm always open to discussing product design work
-                        or partnership opportunities.</p>
-
+                    <p class="text-muted" style="margin-bottom: 40px;">I'm always open to discussing product design work or partnership opportunities.</p>
+                    
                     <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
                         <i data-lucide="mail" style="color: var(--primary);"></i>
                         <span>hello@devakorn.tech</span>
@@ -284,7 +268,6 @@
             </div>
             <p>&copy; 2026 DEVAKORN. All rights reserved.</p>
         </div>
-        <p class="copyright">&copy; 2026 Kidakorn Intha. All rights reserved.</p>
     </footer>
 
     <!-- Whatsapp Float -->
@@ -303,9 +286,7 @@
       "sameAs": ["https://linkedin.com/in/devakorn", "https://github.com/devakorn"]
     }
     </script>
-
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
-
 </html>

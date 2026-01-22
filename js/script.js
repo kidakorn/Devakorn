@@ -130,20 +130,34 @@ function type() {
 }
 type();
 
-/* --- CUSTOM CURSOR --- */
+/* --- CUSTOM CURSOR WITH SMOOTH LERP --- */
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+let mouseX = 0, mouseY = 0;
+let followerX = 0, followerY = 0;
 
-    // Small delay for follower
-    setTimeout(() => {
-        follower.style.left = e.clientX + 'px';
-        follower.style.top = e.clientY + 'px';
-    }, 50);
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Main dot moves instantly
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
 });
+
+function animateCursor() {
+    // Smooth lerp (Linear Interpolation) for follower
+    // Formula: current = current + (target - current) * factor
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
 
 document.body.addEventListener('mouseover', (e) => {
     if (e.target.closest('.hover-trigger') || e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
@@ -258,4 +272,27 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
         btn.style.background = '';
         e.target.reset();
     }, 3000);
+});
+
+/* --- MOBILE MENU LOGIC (New) --- */
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.getElementById('nav-links');
+const navItems = document.querySelectorAll('.nav-link');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const isOpen = navLinks.classList.contains('active');
+
+    // Toggle Icon
+    mobileMenuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+    lucide.createIcons();
+});
+
+// Close menu when a link is clicked
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+    });
 });
