@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('preloader').style.opacity = '0';
         document.getElementById('preloader').style.visibility = 'hidden';
     }, 2000);
+
+    // Initialize UI elements
+    initializeUIElements();
 });
 
 /* --- PROJECT DATA --- */
