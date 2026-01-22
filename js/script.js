@@ -288,9 +288,18 @@ mobileMenuBtn.addEventListener('click', () => {
     lucide.createIcons();
 });
 
-// Close menu when a link is clicked
+// Close menu when a link is clicked & smooth scroll without hash
 navItems.forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = item.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
         navLinks.classList.remove('active');
         mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
         lucide.createIcons();
