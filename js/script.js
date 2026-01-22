@@ -103,7 +103,7 @@ function resetTilt(e) {
 
 /* --- TYPING ANIMATION --- */
 const typingText = document.querySelector('.typing-text');
-const roles = ["UI/UX Architect", "Creative Developer", "Tech Visionary"];
+const roles = ["Creative Web Developer", "Graphic Designer", "Programmer"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

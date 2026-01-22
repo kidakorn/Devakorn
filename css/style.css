@@ -390,8 +390,9 @@ html.light .mobile-menu-btn {
 
 html.light .mobile-menu-btn i,
 html.light .mobile-menu-btn svg {
-    color: #0f0f14;
-    stroke: #0f0f14;
+    color: #0f0f14 !important;
+    stroke: #0f0f14 !important;
+    fill: none !important;
 }
 
 html.light .mobile-menu-btn:hover {
@@ -400,8 +401,8 @@ html.light .mobile-menu-btn:hover {
 
 html.light .mobile-menu-btn:hover i,
 html.light .mobile-menu-btn:hover svg {
-    color: var(--primary);
-    stroke: var(--primary);
+    color: var(--primary) !important;
+    stroke: var(--primary) !important;
 }
 
 .theme-toggle {
