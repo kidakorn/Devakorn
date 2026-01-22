@@ -27,6 +27,14 @@ html.light {
     --text-muted: #55555a;
 }
 
+html.light .theme-toggle {
+    color: #0f0f14;
+}
+
+html.light .theme-toggle:hover {
+    color: var(--primary);
+}
+
 /* --- RESET & BASE --- */
 * {
     margin: 0;
@@ -257,6 +265,15 @@ nav.scrolled {
     padding: 15px 0;
 }
 
+html.light nav {
+    background: rgba(245, 245, 247, 0.95);
+}
+
+html.light nav.scrolled {
+    background: rgba(245, 245, 247, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
 .nav-inner {
     display: flex;
     justify-content: space-between;
@@ -296,6 +313,31 @@ nav.scrolled {
     color: var(--primary);
 }
 
+@media (max-width: 768px) {
+    .nav-links a {
+        color: var(--text-main);
+        font-size: 1.5rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--primary);
+    }
+
+    html.light .nav-links {
+        background: rgba(15, 15, 20, 0.95);
+    }
+
+    html.light .nav-links a {
+        color: #f5f5f7;
+    }
+
+    html.light .nav-links a:hover,
+    html.light .nav-links a.active {
+        color: var(--primary);
+    }
+}
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -320,6 +362,46 @@ nav.scrolled {
     color: var(--text-main);
     cursor: pointer;
     z-index: 102;
+    padding: 8px;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn i,
+.mobile-menu-btn svg {
+    color: var(--text-main);
+    stroke: var(--text-main);
+    fill: none;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary);
+}
+
+.mobile-menu-btn:hover i,
+.mobile-menu-btn:hover svg {
+    color: var(--primary);
+    stroke: var(--primary);
+}
+
+html.light .mobile-menu-btn {
+    color: #0f0f14;
+}
+
+html.light .mobile-menu-btn i,
+html.light .mobile-menu-btn svg {
+    color: #0f0f14;
+    stroke: #0f0f14;
+}
+
+html.light .mobile-menu-btn:hover {
+    color: var(--primary);
+}
+
+html.light .mobile-menu-btn:hover i,
+html.light .mobile-menu-btn:hover svg {
+    color: var(--primary);
+    stroke: var(--primary);
 }
 
 .theme-toggle {
@@ -328,6 +410,16 @@ nav.scrolled {
     color: var(--text-main);
     font-size: 1.2rem;
     margin-left: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--primary);
 }
 
 /* --- HERO --- */
@@ -904,10 +996,6 @@ footer {
     .nav-links.active {
         right: 0;
         /* Slide in */
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
     }
 
     #cursor,

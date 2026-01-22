@@ -274,6 +274,19 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     }, 3000);
 });
 
+/* --- SCROLL TO SECTION LOGIC --- */
+document.querySelectorAll('.scroll-to-section').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
 /* --- SCROLL TO TOP BUTTON --- */
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 const logoLink = document.getElementById('logo-link');
