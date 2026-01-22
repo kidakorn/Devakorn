@@ -1,679 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Kidakorn Intha - Fullstack Developer specializing in web and mobile applications">
-    <meta name="keywords" content="Fullstack Developer, Web Developer, HTML, CSS, JavaScript, React, PHP, Node.js">
-    <meta name="author" content="Kidakorn Intha (Cola)">
+    <title>DEVAKORN | Creative Technologist 2026</title>
+    <meta name="description"
+        content="Premium Portfolio of Devakorn - Senior UI/UX Architect & Front-end Engineer. specializing in futuristic interfaces.">
+
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="DEVAKORN Portfolio">
+    <meta property="og:description" content="Clean Red Tech. The Future of UI.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/0f0f14/ff2a2a?text=DEVAKORN">
     <meta name="theme-color" content="#0f0f14">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kidakorn Intha - Fullstack Developer">
-    <meta property="og:description" content="Portfolio showcasing web development projects and skills">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://devakorn.com">
-    
-    <title>Kidakorn Intha - Fullstack Developer | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (Lucide via CDN for lightweight vectors) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
+
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">DEVAKORN</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Background -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-container">
-            <a href="#home" class="logo" aria-label="Devakorn home">
-                <span class="logo-text">DEVAKORN</span>
-            </a>
-            
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo">DEVA<span>KORN</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="theme-btn"><i data-lucide="sun"></i></button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Kidakorn Intha</span>
-                </h1>
-                
-                <div class="typing-container">
-                    <span class="typing-prefix">I'm a </span>
-                    <span class="typing-text" id="typingText"></span>
-                    <span class="typing-cursor"></span>
-                </div>
-                
-                <p class="hero-tagline">
-                    Building elegant digital experiences with modern web technologies. 
-                    Based in <span class="location">Thailand</span>.
-                </p>
-                
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary" aria-label="View my projects">
-                        View Projects
-                    </a>
-                    <a href="#contact" class="btn btn-secondary" aria-label="Contact me">
-                        Get in Touch
-                    </a>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Hello, I am</h2>
+                <h1 class="text-gradient">DEVAKORN</h1>
+                <p>I am a <span class="typing-text"></span></p>
+                <div style="margin-top: 40px;">
+                    <a href="#projects" class="btn btn-solid hover-trigger">View Work <i
+                            data-lucide="arrow-right"></i></a>
+                    <a href="#contact" class="btn hover-trigger">Contact Me</a>
                 </div>
             </div>
         </div>
-        
-        <div class="hero-scroll" aria-hidden="true">
-            <span>Scroll to explore</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="12 5 12 19"></polyline>
-                <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
-        </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About & Skills -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-wrapper">
-                        <div class="image-placeholder" aria-label="Profile image of Kidakorn Intha"></div>
-                        <div class="glow-circle"></div>
-                    </div>
+            <h2 class="section-title reveal">Who I Am</h2>
+            <div class="grid about-grid reveal">
+                <div class="about-img hover-trigger">
+                    <!-- Placeholder for profile -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Devakorn Profile">
                 </div>
-                
-                <div class="about-text">
-                    <p class="about-intro">
-                        I'm a passionate fullstack developer with a keen eye for design and detail. 
-                        With expertise across frontend, backend, and database technologies, I create 
-                        comprehensive solutions that solve real-world problems.
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">Building the <span class="text-gradient">Digital
+                            Future</span></h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">
+                        With over 8 years of experience in front-end architecture, I specialize in building
+                        high-performance, accessible, and immersive web experiences. I bridge the gap between creative
+                        design and technical engineering.
                     </p>
-                    
-                    <p class="about-description">
-                        My journey in tech started with a curiosity about how things work. 
-                        Today, I combine technical excellence with creative problem-solving to build 
-                        applications that are not just functional, but beautiful and intuitive.
-                    </p>
-                    
-                    <p class="about-description">
-                        When I'm not coding, you'll find me exploring new technologies, contributing 
-                        to open source, or mentoring aspiring developers.
-                    </p>
-                    
-                    <div class="tech-stack">
-                        <h3 class="tech-title">Tech Stack</h3>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Delphi</span>
-                            <span class="tech-tag">LANSA</span>
+
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Frontend Architecture</span><span>95%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="95%"></div>
+                            </div>
                         </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>UI/UX Design</span><span>90%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>WebGL / Three.js</span><span>85%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">React / Next.js</span>
+                        <span class="tech-tag">WebGL</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Figma</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Experience Timeline -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024 - Present</div>
+                    <h3>Senior Frontend Engineer</h3>
+                    <p class="text-muted">TechNova Solutions</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Leading the design system migration and architecting
+                        the new micro-frontend dashboard.</p>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2021 - 2024</div>
+                    <h3>UI/UX Developer</h3>
+                    <p class="text-muted">Creative Pulse Agency</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Award-winning sites for automotive and fashion
+                        clients using WebGL.</p>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2018 - 2021</div>
+                    <h3>Junior Developer</h3>
+                    <p class="text-muted">StartUp Inc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all" aria-pressed="true">
-                    All
-                </button>
-                <button class="filter-btn" data-filter="react" aria-pressed="false">
-                    React
-                </button>
-                <button class="filter-btn" data-filter="javascript" aria-pressed="false">
-                    Vanilla JS
-                </button>
-                <button class="filter-btn" data-filter="php" aria-pressed="false">
-                    PHP
-                </button>
-                <button class="filter-btn" data-filter="node" aria-pressed="false">
-                    Node.js
-                </button>
+            <h2 class="section-title reveal">Selected Work</h2>
+
+            <div class="filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="design">UI Design</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
             </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-tags="react">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%231a1a1f' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23888' text-anchor='middle' dominant-baseline='middle'%3EE-Commerce Platform%3C/text%3E%3C/svg%3E" 
-                             alt="E-Commerce Platform Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View demo">Live Demo</a>
-                                <a href="#" class="project-link" aria-label="View source code">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-info">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">
-                            Full-featured online store with product catalog, shopping cart, and payment integration. 
-                            Built with React for dynamic UI and Node.js backend.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="project-card" data-tags="javascript">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%231a1a1f' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23888' text-anchor='middle' dominant-baseline='middle'%3EWeather App%3C/text%3E%3C/svg%3E" 
-                             alt="Weather Application Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View demo">Live Demo</a>
-                                <a href="#" class="project-link" aria-label="View source code">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-info">
-                        <h3 class="project-title">Weather Application</h3>
-                        <p class="project-description">
-                            Real-time weather app using OpenWeather API with dynamic backgrounds, 
-                            geolocation support, and responsive design.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">API</span>
-                            <span class="project-tag">CSS3</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid project-grid" id="project-container">
+                <!-- Projects injected via JS -->
+            </div>
+        </div>
+    </section>
 
-                <!-- Project 3 -->
-                <div class="project-card" data-tags="php">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%231a1a1f' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23888' text-anchor='middle' dominant-baseline='middle'%3ETask Manager%3C/text%3E%3C/svg%3E" 
-                             alt="Task Management System Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View demo">Live Demo</a>
-                                <a href="#" class="project-link" aria-label="View source code">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-info">
-                        <h3 class="project-title">Task Manager</h3>
-                        <p class="project-description">
-                            Collaborative task management system with user authentication, 
-                            real-time updates, and progress tracking.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">PHP</span>
-                            <span class="project-tag">MySQL</span>
-                            <span class="project-tag">AJAX</span>
-                        </div>
-                    </div>
+    <!-- Services -->
+    <section id="services" class="section" style="padding: 100px 0;">
+        <div class="container">
+            <h2 class="section-title reveal">Services</h2>
+            <div class="grid services-grid">
+                <div class="service-card reveal hover-trigger">
+                    <i data-lucide="layout" class="service-icon"></i>
+                    <h3>UI/UX Architecture</h3>
+                    <p class="text-muted">Scalable design systems and user-centric interfaces.</p>
                 </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" data-tags="node">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%231a1a1f' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23888' text-anchor='middle' dominant-baseline='middle'%3EAPI Gateway%3C/text%3E%3C/svg%3E" 
-                             alt="API Gateway Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View demo">Live Demo</a>
-                                <a href="#" class="project-link" aria-label="View source code">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-info">
-                        <h3 class="project-title">API Gateway Service</h3>
-                        <p class="project-description">
-                            RESTful API gateway with authentication, rate limiting, and comprehensive 
-                            documentation. Built with Express.js and deployed on cloud infrastructure.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">Express</span>
-                            <span class="project-tag">REST API</span>
-                        </div>
-                    </div>
+                <div class="service-card reveal hover-trigger">
+                    <i data-lucide="code" class="service-icon"></i>
+                    <h3>Frontend Engineering</h3>
+                    <p class="text-muted">Pixel-perfect implementation using modern standards.</p>
                 </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-tags="react">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%231a1a1f' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23888' text-anchor='middle' dominant-baseline='middle'%3EPortfolio Dashboard%3C/text%3E%3C/svg%3E" 
-                             alt="Portfolio Dashboard Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View demo">Live Demo</a>
-                                <a href="#" class="project-link" aria-label="View source code">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-info">
-                        <h3 class="project-title">Admin Dashboard</h3>
-                        <p class="project-description">
-                            Comprehensive admin panel with real-time analytics, user management, 
-                            and data visualization. Fully responsive and accessible.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Chart.js</span>
-                            <span class="project-tag">Context API</span>
-                        </div>
-                    </div>
+                <div class="service-card reveal hover-trigger">
+                    <i data-lucide="zap" class="service-icon"></i>
+                    <h3>Performance Audit</h3>
+                    <p class="text-muted">Optimizing load times and Core Web Vitals.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Project 6 -->
-                <div class="project-card" data-tags="javascript">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%231a1a1f' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23888' text-anchor='middle' dominant-baseline='middle'%3ENote Taking App%3C/text%3E%3C/svg%3E" 
-                             alt="Note Taking Application Project" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View demo">Live Demo</a>
-                                <a href="#" class="project-link" aria-label="View source code">GitHub</a>
-                            </div>
-                        </div>
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title reveal">Client Words</h2>
+            <div style="overflow: hidden;">
+                <div class="testimonial-slider" id="slider">
+                    <div class="testimonial-card hover-trigger">
+                        <i data-lucide="quote" class="quote-icon"></i>
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">"Devakorn transformed our digital presence.
+                            The attention to detail and animations are world-class."</p>
+                        <h4>Sarah Jenkins</h4>
+                        <p class="text-muted">CEO, FinTech Global</p>
                     </div>
-                    
-                    <div class="project-info">
-                        <h3 class="project-title">Note Taking App</h3>
-                        <p class="project-description">
-                            Progressive web app with offline functionality, local storage, 
-                            and rich text editing capabilities. Works seamlessly on all devices.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">PWA</span>
-                            <span class="project-tag">LocalStorage</span>
-                        </div>
+                    <div class="testimonial-card hover-trigger">
+                        <i data-lucide="quote" class="quote-icon"></i>
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">"Clean code, futuristic design, and delivered
+                            ahead of schedule. Highly recommended."</p>
+                        <h4>Marc Alistair</h4>
+                        <p class="text-muted">Director, RedStream</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <!-- FAQ -->
+    <section class="section" style="padding: 50px 0;">
         <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            
-            <div class="skills-grid">
-                <!-- Frontend Skills -->
-                <div class="skill-category">
-                    <h3 class="category-title">Frontend</h3>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">HTML5 & CSS3</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="95" aria-valuenow="95" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="90" aria-valuenow="90" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">React</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="85" aria-valuenow="85" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Backend Skills -->
-                <div class="skill-category">
-                    <h3 class="category-title">Backend</h3>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-percent">88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="88" aria-valuenow="88" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-percent">82%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="82" aria-valuenow="82" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">MySQL & Database Design</span>
-                            <span class="skill-percent">87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="87" aria-valuenow="87" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other Skills -->
-                <div class="skill-category">
-                    <h3 class="category-title">Other</h3>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Delphi</span>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="75" aria-valuenow="75" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">LANSA</span>
-                            <span class="skill-percent">78%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="78" aria-valuenow="78" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Git & Version Control</span>
-                            <span class="skill-percent">89%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="89" aria-valuenow="89" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="section-title reveal">FAQ</h2>
+            <div class="faq-container" style="max-width: 800px;">
+                <details class="reveal"
+                    style="background: var(--surface); margin-bottom: 10px; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                    <summary style="font-weight: 600; list-style: none;">Are you available for freelance?</summary>
+                    <p class="text-muted" style="margin-top: 10px;">Yes, currently accepting new projects for Q3 2026.
+                        Please contact me for availability.</p>
+                </details>
+                <details class="reveal"
+                    style="background: var(--surface); margin-bottom: 10px; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                    <summary style="font-weight: 600; list-style: none;">What is your tech stack?</summary>
+                    <p class="text-muted" style="margin-top: 10px;">I primarily work with React/Next.js, Vue, WebGL, and
+                        Tailwind, but I adapt to project needs.</p>
+                </details>
             </div>
         </div>
     </section>
 
-    <!-- Experience & Education Section -->
-    <section id="experience" class="experience">
+    <!-- Contact -->
+    <section id="contact" class="section" style="padding: 100px 0;">
         <div class="container">
-            <h2 class="section-title">Experience & Education</h2>
-            
-            <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-item" data-type="work">
-                    <div class="timeline-marker">
-                        <span class="timeline-icon" aria-hidden="true"></span>
+            <h2 class="section-title reveal">Let's Talk</h2>
+            <div class="contact-wrapper reveal">
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">Have a project in mind?</h3>
+                    <p class="text-muted" style="margin-bottom: 40px;">I'm always open to discussing product design work
+                        or partnership opportunities.</p>
+
+                    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                        <i data-lucide="mail" style="color: var(--primary);"></i>
+                        <span>hello@devakorn.tech</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Senior Fullstack Developer</h3>
-                        <p class="timeline-company">Tech Company Ltd.</p>
-                        <p class="timeline-date">2023 - Present</p>
-                        <p class="timeline-description">
-                            Led development of multiple web applications serving 100K+ users. 
-                            Implemented responsive designs, optimized database queries, and mentored junior developers.
-                        </p>
+                    <div style="display: flex; gap: 20px; align-items: center;">
+                        <i data-lucide="map-pin" style="color: var(--primary);"></i>
+                        <span>Bangkok, Thailand (Remote Worldwide)</span>
                     </div>
                 </div>
 
-                <!-- Experience 2 -->
-                <div class="timeline-item" data-type="work">
-                    <div class="timeline-marker">
-                        <span class="timeline-icon" aria-hidden="true"></span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Fullstack Developer</h3>
-                        <p class="timeline-company">Digital Solutions Inc.</p>
-                        <p class="timeline-date">2021 - 2023</p>
-                        <p class="timeline-description">
-                            Developed and maintained e-commerce platforms using React and Node.js. 
-                            Built RESTful APIs and optimized frontend performance.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Experience 3 -->
-                <div class="timeline-item" data-type="work">
-                    <div class="timeline-marker">
-                        <span class="timeline-icon" aria-hidden="true"></span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Web Developer</h3>
-                        <p class="timeline-company">StartUp Hub</p>
-                        <p class="timeline-date">2019 - 2021</p>
-                        <p class="timeline-description">
-                            Built dynamic websites with HTML, CSS, JavaScript, and PHP. 
-                            Collaborated with designers to create responsive, user-friendly interfaces.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Education 1 -->
-                <div class="timeline-item" data-type="education">
-                    <div class="timeline-marker">
-                        <span class="timeline-icon" aria-hidden="true"></span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
-                        <p class="timeline-company">University of Thailand</p>
-                        <p class="timeline-date">2018 - 2022</p>
-                        <p class="timeline-description">
-                            Specialized in web development and database management. 
-                            GPA: 3.8/4.0. Graduated with honors.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Education 2 -->
-                <div class="timeline-item" data-type="education">
-                    <div class="timeline-marker">
-                        <span class="timeline-icon" aria-hidden="true"></span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Diploma in Information Technology</h3>
-                        <p class="timeline-company">Technical School Bangkok</p>
-                        <p class="timeline-date">2015 - 2018</p>
-                        <p class="timeline-description">
-                            Completed coursework in programming, networking, and IT fundamentals. 
-                            Built foundation for web development career.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">
-                Have a project in mind? Let's work together to bring your ideas to life.
-            </p>
-            
-            <div class="contact-wrapper">
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-group">
-                        <label for="name">Full Name <span aria-label="required">*</span></label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            placeholder="Your name"
-                            required
-                            aria-required="true"
-                            aria-describedby="name-error">
-                        <span class="error-message" id="name-error"></span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address <span aria-label="required">*</span></label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            placeholder="your.email@example.com"
-                            required
-                            aria-required="true"
-                            aria-describedby="email-error">
-                        <span class="error-message" id="email-error"></span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject <span aria-label="required">*</span></label>
-                        <input 
-                            type="text" 
-                            id="subject" 
-                            name="subject" 
-                            placeholder="Project inquiry"
-                            required
-                            aria-required="true"
-                            aria-describedby="subject-error">
-                        <span class="error-message" id="subject-error"></span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message <span aria-label="required">*</span></label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            rows="6" 
-                            placeholder="Tell me about your project..."
-                            required
-                            aria-required="true"
-                            aria-describedby="message-error"></textarea>
-                        <span class="error-message" id="message-error"></span>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" aria-label="Send message">
-                        Send Message
-                    </button>
-                    <span class="form-message" id="formMessage"></span>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Name" required class="hover-trigger">
+                    <input type="email" placeholder="Email" required class="hover-trigger">
+                    <textarea rows="5" placeholder="Project Details" required class="hover-trigger"></textarea>
+                    <button type="submit" class="btn btn-solid hover-trigger">Send Message</button>
                 </form>
-                
-                <div class="contact-info">
-                    <div class="info-item">
-                        <h3 class="info-title">Email</h3>
-                        <a href="mailto:contact@devakorn.com" class="info-link" aria-label="Email contact">
-                            contact@devakorn.com
-                        </a>
-                    </div>
-                    
-                    <div class="info-item">
-                        <h3 class="info-title">Location</h3>
-                        <p class="info-text">Thailand</p>
-                    </div>
-                    
-                    <div class="info-item">
-                        <h3 class="info-title">Follow</h3>
-                        <div class="social-links">
-                            <a href="https://github.com" class="social-link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer">
-                                GitHub
-                            </a>
-                            <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
-                                LinkedIn
-                            </a>
-                            <a href="https://twitter.com" class="social-link" aria-label="Twitter profile" target="_blank" rel="noopener noreferrer">
-                                Twitter
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">DEVAKORN</h3>
-                    <p class="footer-text">
-                        Crafting digital experiences with precision and creativity.
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home" class="footer-link">Home</a></li>
-                        <li><a href="#projects" class="footer-link">Projects</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Social</h3>
-                    <div class="social-links">
-                        <a href="https://github.com" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                            GitHub
-                        </a>
-                        <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                            LinkedIn
-                        </a>
-                        <a href="https://twitter.com" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                            Twitter
-                        </a>
-                    </div>
-                </div>
+            <div class="social-links">
+                <a href="#" class="hover-trigger"><i data-lucide="github"></i></a>
+                <a href="#" class="hover-trigger"><i data-lucide="linkedin"></i></a>
+                <a href="#" class="hover-trigger"><i data-lucide="twitter"></i></a>
+                <a href="#" class="hover-trigger"><i data-lucide="dribbble"></i></a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kidakorn Intha. All rights reserved.</p>
-            </div>
+            <p>&copy; 2026 DEVAKORN. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top" title="Scroll to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
+    <!-- Whatsapp Float -->
+    <a href="#" class="whatsapp-float hover-trigger" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle"></i>
+    </a>
 
-    <script src="script.js"></script>
+    <!-- JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Devakorn",
+      "url": "https://devakorn.tech",
+      "jobTitle": "Senior Frontend Engineer",
+      "sameAs": ["https://linkedin.com/in/devakorn", "https://github.com/devakorn"]
+    }
+    </script>
+
+    <script src="/js/script.js"></script>
+
 </body>
+
 </html>
