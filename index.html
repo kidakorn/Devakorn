@@ -42,7 +42,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-inner">
-            <a href="#" class="logo">DEVA<span>KORN</span></a>
+            <a href="javascript:void(0)" class="logo" id="logo-link">DEVA<span>KORN</span></a>
             
             <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-btn hover-trigger" id="mobile-menu-btn" aria-label="Toggle Menu">
@@ -270,10 +270,32 @@
         </div>
     </footer>
 
-    <!-- Whatsapp Float -->
-    <a href="#" class="whatsapp-float hover-trigger" aria-label="Chat on WhatsApp">
-        <i data-lucide="message-circle"></i>
-    </a>
+    <!-- Contact Widget Float -->
+    <div class="contact-widget hover-trigger">
+        <button class="contact-widget-toggle" id="contact-widget-toggle" aria-label="Toggle Contact Widget">
+            <i data-lucide="phone"></i>
+        </button>
+        <div class="contact-widget-panel" id="contact-widget-panel">
+            <h4>Get in Touch</h4>
+            <div class="contact-widget-item">
+                <i data-lucide="mail"></i>
+                <a href="mailto:hello@devakorn.tech">hello@devakorn.tech</a>
+            </div>
+            <div class="contact-widget-item">
+                <i data-lucide="phone"></i>
+                <a href="tel:+66123456789">+66 (123) 456-789</a>
+            </div>
+            <div class="contact-widget-item">
+                <i data-lucide="map-pin"></i>
+                <span>Bangkok, Thailand</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top-btn" id="scroll-to-top-btn" aria-label="Scroll to Top">
+        <i data-lucide="arrow-up"></i>
+    </button>
 
     <!-- JSON-LD SEO -->
     <script type="application/ld+json">

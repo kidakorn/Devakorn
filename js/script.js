@@ -274,6 +274,53 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     }, 3000);
 });
 
+/* --- SCROLL TO TOP BUTTON --- */
+const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+const logoLink = document.getElementById('logo-link');
+
+// Logo click to scroll to hero
+if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+/* --- CONTACT WIDGET LOGIC --- */
+const contactWidgetToggle = document.getElementById('contact-widget-toggle');
+const contactWidget = document.querySelector('.contact-widget');
+
+if (contactWidgetToggle) {
+    contactWidgetToggle.addEventListener('click', () => {
+        contactWidget.classList.toggle('active');
+    });
+
+    // Close widget when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!contactWidget.contains(e.target)) {
+            contactWidget.classList.remove('active');
+        }
+    });
+}
+
 /* --- MOBILE MENU LOGIC (New) --- */
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navLinks = document.getElementById('nav-links');
