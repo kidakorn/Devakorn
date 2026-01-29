@@ -15,28 +15,32 @@ document.addEventListener('DOMContentLoaded', () => {
 /* --- PROJECT DATA --- */
 const projects = [
     {
-        title: "Neon Finance",
+        title: "PWA-DEVASHOP",
         category: "web",
-        tags: ["React", "D3.js"],
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+        tags: ["Angular", "E-commerce"],
+        img: "/images/pwa-e-commerce.png",
+        url: "https://devashop.vercel.app/"
     },
     {
         title: "Cyberpunk HUD",
         category: "design",
         tags: ["Figma", "After Effects"],
-        img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+        img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+        url: "https://devashop.vercel.app/"
     },
     {
         title: "HealthTrack AI",
         category: "mobile",
         tags: ["React Native", "AI"],
-        img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+        img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+        url: "https://devashop.vercel.app/"
     },
     {
         title: "AeroSpace Viz",
         category: "web",
         tags: ["Three.js", "WebGL"],
-        img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+        img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+        url: "https://devashop.vercel.app/"
     }
 ];
 
@@ -55,8 +59,8 @@ function renderProjects(filter = 'all') {
                             <div class="card-tags">${proj.tags.join(' / ')}</div>
                             <h3>${proj.title}</h3>
                             <div class="card-links">
-                                <a href="#" style="color:var(--text-main); font-size:0.9rem;">View Case</a>
-                                <a href="#" style="color:var(--primary); font-size:0.9rem;"><i data-lucide="github" style="width:16px;"></i></a>
+                                <a href="${proj.url}" target="_blank" style="color:var(--text-main); font-size:0.9rem;">View Case</a>
+                                <a href="${proj.url}" target="_blank" style="color:var(--primary); font-size:0.9rem;"><i data-lucide="github" style="width:16px;"></i></a>
                             </div>
                         </div>
                     `;
